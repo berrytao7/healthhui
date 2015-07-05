@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/opt/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-d11b86e8a8d5a60125987e55ed19da6fe916ed6c.jar" />
+    </item>
+    <item
+        jar="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/pre-dexed/debug/classes-5a69c386703afc6a7c50612c1d268361a37dfe24.jar" />
+    </item>
+    <item
+        jar="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/pre-dexed/debug/classes-5bfb6033285fbb6af8c7de437c9cd384203ae082.jar" />
+    </item>
+    <item
+        jar="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-026af42aae23be82bc78a26304f88050bd0247b1.jar" />
+    </item>
+    <item
+        jar="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/exploded-aar/AnySearch/volley/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5e2a06067c4e7fedb00093d6ebd34b21236d62d4">
+        <dex dex="/home/peterzhang/AndroidStudioProjects/AnySearch/app/build/intermediates/pre-dexed/debug/classes-b414898a789308eb3e3eb283dcb87c575a32b4f3.jar" />
+    </item>
+
+</items>
