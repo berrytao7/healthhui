@@ -29,6 +29,4 @@ android {
 apply from: 'rules.gradle'
 
 dependencies {
-    compile 'junit:junit:4.12'
-    compile 'org.robolectric:robolectric:3.0-rc3'
 }
