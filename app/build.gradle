@@ -10,13 +10,37 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+        buildConfigField "boolean", "Switch", "true"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            minifyEnabled false
+        }
+
+
     }
+
+
+    productFlavors {
+
+        "wandoujia"{
+            buildConfigField "boolean", "Switch", "false"
+        }
+        "91"{}
+        "360"{}
+        "unspecified"{}
+
+        productFlavors.all{
+            flavor -> flavor.manifestPlaceholders = [channelName:name]
+        }
+
+    }
+
 }
 
 dependencies {

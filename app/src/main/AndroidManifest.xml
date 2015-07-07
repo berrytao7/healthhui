@@ -22,6 +22,12 @@
             android:label="@string/id_search">
 
             </activity>
+
+
+        <meta-data
+            android:name="channel"
+            android:value="${channelName}" />
+
     </application>
 
 </manifest>
