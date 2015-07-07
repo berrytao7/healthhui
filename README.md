@@ -7,7 +7,12 @@ com.android.volley.toolbox.HurlStack.java
 
 performRequest  方法中添加 
 
-'''java
+```ruby
 //peterzhang add code for app key
 connection.setRequestProperty("apikey","自己注册帐号后对应的apikey字符串")
-'''
+```
+#使用gradle构建
+1. gradle clean  
+2. gradle build //构建所有渠道的apk，包括360 91 wandoujia
+3. gradle assembleWandoujia //构建wandoujia渠道的apk
+4. 具体参考build.gradle文件。针对每一个渠道可以配置不同的变量值，具体参考buildConfigField
