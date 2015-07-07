@@ -7,6 +7,7 @@ com.android.volley.toolbox.HurlStack.java
 
 performRequest  方法中添加 
 
-```java
+<code>
 //peterzhang add code for app key
 connection.setRequestProperty("apikey","自己注册帐号后对应的apikey字符串")
+</code>
