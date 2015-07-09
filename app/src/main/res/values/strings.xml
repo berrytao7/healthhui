@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">AnySearch</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="id_search">身份证搜索</string>
+    <string name="health_search">健康资讯</string>
     <string name="sex_m">男</string>
     <string name="sex_f">女</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_health_messeage">HealthMesseageActivity</string>
+    <string name="title_activity_health_category_detail">HealthCategoryDetailActivity</string>
 </resources>
