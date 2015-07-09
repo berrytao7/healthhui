@@ -1,6 +1,7 @@
 package com.example.peterzhang.anysearch.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.Image;
 import android.text.Html;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.example.peterzhang.anysearch.HealthMsgItemDetailActivity;
 import com.example.peterzhang.anysearch.R;
 import com.example.peterzhang.anysearch.mode.HealthMsgItem;
 
@@ -87,7 +89,7 @@ public class HealthMsgItemAdapter extends BaseAdapter {
         ImageLoader imageLoader = new ImageLoader(queue,new BitmapCache());
         ImageLoader.ImageListener listener = ImageLoader.getImageListener(thumb,R.mipmap.ic_launcher, R.mipmap.ic_launcher);
         imageLoader.get("http://apis.baidu.com/yi18/news/search/news/img/default.jpg",listener);
-        convertView.setOnClickListener(new HealthItemOnclickListener());
+        convertView.setOnClickListener(new HealthItemOnclickListener(healthMsgItem));
         return convertView;
     }
 
@@ -130,8 +132,19 @@ public class HealthMsgItemAdapter extends BaseAdapter {
     }
 
     private class HealthItemOnclickListener implements View.OnClickListener{
+        private HealthMsgItem msgItem;
+        public HealthItemOnclickListener(HealthMsgItem item){
+
+            msgItem = item;
+        }
+
         @Override
         public void onClick(View v) {
+
+            Intent intent = new Intent();
+            intent.setClass(mContext, HealthMsgItemDetailActivity.class);
+            intent.putExtra("id",msgItem.getId());
+            mContext.startActivity(intent);
 
         }
     }

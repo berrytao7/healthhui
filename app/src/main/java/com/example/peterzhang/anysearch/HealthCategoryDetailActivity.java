@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class HealthCategoryDetailActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
+public class HealthCategoryDetailActivity extends ActionBarActivity{
 
     private static final String TAG = "HealthCategoryDetail";
     private ListView mListView;
@@ -39,7 +39,6 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
         setContentView(R.layout.activity_health_category_detail);
         mContext = this;
         mListView = (ListView)this.findViewById(R.id.category_detail);
-        mListView.setOnItemClickListener(this);
         String keyword = getIntent().getStringExtra("keyword");
         queryHealthMsg(keyword,1);
     }
@@ -108,10 +107,5 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
 
         );
         requestQueue.add(jsonObjectRequest);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
     }
 }

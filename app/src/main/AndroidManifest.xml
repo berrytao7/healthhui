@@ -33,6 +33,11 @@
             >
         </activity>
 
+        <activity android:name=".HealthMsgItemDetailActivity"
+            android:label="@string/title_activity_health_msg_item_detail"
+            >
+        </activity>
+
 
         <meta-data
             android:name="channel"
