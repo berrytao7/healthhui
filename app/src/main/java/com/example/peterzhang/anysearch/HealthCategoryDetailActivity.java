@@ -53,7 +53,6 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
         mListView = (ListView)this.findViewById(R.id.category_detail);
         String keyword = getIntent().getStringExtra("keyword");
         mKeyword = keyword;
-        queryHealthMsg(keyword,1);
         mListView.setOnScrollListener(this);
         mLayoutInflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         RelativeLayout foot = (RelativeLayout)mLayoutInflater.inflate(R.layout.load_item,null);
@@ -61,6 +60,9 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
         mLoadProgress = (ProgressBar)foot.findViewById(R.id.loading);
         mListView.addFooterView(foot);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //查询健康资讯
+        mLoadProgress.setVisibility(View.VISIBLE);
+//        queryHealthMsg(keyword,1);
     }
 
 

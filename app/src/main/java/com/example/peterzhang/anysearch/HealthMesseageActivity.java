@@ -1,15 +1,14 @@
 package com.example.peterzhang.anysearch;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -31,8 +30,8 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
 
     private static final String TAG = "HealthMesseageActivity";
     private SimpleAdapter mCategoryAdapter;
-
     private ListView mListView;
+    private ProgressBar mLoading;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +39,13 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
         mListView = (ListView)this.findViewById(R.id.category_listView);
         mListView.setOnItemClickListener(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        mLoading = (ProgressBar)this.findViewById(R.id.loading);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        mLoading.setVisibility(View.VISIBLE);
         searchCategory();
     }
 
@@ -62,7 +63,6 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        Log.d("TEST","id="+id+" R.id.homeAsUp="+ActionBar.DISPLAY_HOME_AS_UP);
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -99,12 +99,15 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
                             e.printStackTrace();
                         }
 
+                        mLoading.setVisibility(View.GONE);
+
                     }
                 },
                 new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
                         volleyError.printStackTrace();
+                        mLoading.setVisibility(View.GONE);
                     }
                 }
 
@@ -115,10 +118,7 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
         TextView name = (TextView)view.findViewById(android.R.id.text1);
-        Log.i(TAG,"name="+name.getText());
-
         Intent intent = new Intent();
         intent.setClass(HealthMesseageActivity.this,HealthCategoryDetailActivity.class);
         intent.putExtra("keyword",name.getText().toString());
