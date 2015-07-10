@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -19,7 +20,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONObject;
 
 
-public class HealthMsgItemDetailActivity extends ActionBarActivity {
+public class HealthMsgItemDetailActivity extends ActionBarActivity{
 
     private TextView mContentTextView;
     private TextView mTitleTextView;
@@ -89,4 +90,5 @@ public class HealthMsgItemDetailActivity extends ActionBarActivity {
 
 
     }
+
 }

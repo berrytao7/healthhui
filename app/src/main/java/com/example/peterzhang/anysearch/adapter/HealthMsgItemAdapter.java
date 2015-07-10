@@ -20,6 +20,8 @@ import com.example.peterzhang.anysearch.HealthMsgItemDetailActivity;
 import com.example.peterzhang.anysearch.R;
 import com.example.peterzhang.anysearch.mode.HealthMsgItem;
 
+import org.json.JSONArray;
+
 import java.util.ArrayList;
 
 /**
@@ -30,7 +32,8 @@ public class HealthMsgItemAdapter extends BaseAdapter {
     private static final String TAG = "HealthMsgItemAdapter";
     private Context mContext;
     private ArrayList<HealthMsgItem> msgItemArrayList;
-    LayoutInflater mLayoutInflater;
+    private LayoutInflater mLayoutInflater;
+    private RequestQueue mQueue;
 
     public static HealthMsgItemAdapter build(Context context,ArrayList<HealthMsgItem> healthMsgItems){
 
@@ -42,6 +45,7 @@ public class HealthMsgItemAdapter extends BaseAdapter {
         mContext = context;
         msgItemArrayList = healthMsgItems;
         mLayoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mQueue = Volley.newRequestQueue(mContext);
     }
 
     @Override
@@ -68,9 +72,8 @@ public class HealthMsgItemAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = mLayoutInflater.inflate(R.layout.health_msg_item,parent,false);
             titleTextView = (TextView)convertView.findViewById(R.id.title);
-            contentTextView = (TextView)convertView.findViewById(R.id.content);
             thumb = (ImageView)convertView.findViewById(R.id.thumb);
-            viewHolder = new ViewHolder(titleTextView,contentTextView,thumb);
+            viewHolder = new ViewHolder(titleTextView,thumb);
             convertView.setTag(viewHolder);
 
         }else {
@@ -83,10 +86,9 @@ public class HealthMsgItemAdapter extends BaseAdapter {
 
         HealthMsgItem healthMsgItem = (HealthMsgItem)getItem(position);
         titleTextView.setText(Html.fromHtml(healthMsgItem.getTitle()));
-        contentTextView.setText(Html.fromHtml(healthMsgItem.getContent()));
 
-        RequestQueue queue = Volley.newRequestQueue(mContext);
-        ImageLoader imageLoader = new ImageLoader(queue,new BitmapCache());
+
+        ImageLoader imageLoader = new ImageLoader(mQueue,new BitmapCache());
         ImageLoader.ImageListener listener = ImageLoader.getImageListener(thumb,R.mipmap.ic_launcher, R.mipmap.ic_launcher);
         imageLoader.get("http://apis.baidu.com/yi18/news/search/news/img/default.jpg",listener);
         convertView.setOnClickListener(new HealthItemOnclickListener(healthMsgItem));
@@ -98,7 +100,7 @@ public class HealthMsgItemAdapter extends BaseAdapter {
         public TextView content;
         public ImageView thumb;
 
-        public ViewHolder(TextView title,TextView content,ImageView thumb){
+        public ViewHolder(TextView title,ImageView thumb){
             this.title = title;
             this.content = content;
             this.thumb = thumb;
@@ -147,5 +149,12 @@ public class HealthMsgItemAdapter extends BaseAdapter {
             mContext.startActivity(intent);
 
         }
+    }
+
+    public void addHealthItemFromJsonArray(JSONArray jsonArray){
+        ArrayList<HealthMsgItem> arrayList = new ArrayList<HealthMsgItem>();
+        arrayList = HealthMsgItem.build(jsonArray);
+        msgItemArrayList.addAll(arrayList);
+        notifyDataSetChanged();
     }
 }

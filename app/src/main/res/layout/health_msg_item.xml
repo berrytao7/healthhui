@@ -15,12 +15,12 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/thumb"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/thumb"
+        android:layout_centerVertical="true"
         android:textSize="@dimen/heath_msg_item_title_size"/>
 
-    <TextView
+<!--    <TextView
         android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,5 +28,5 @@
         android:layout_alignLeft="@id/title"
         android:layout_marginTop="4dp"
         android:textSize="@dimen/heath_msg_item_content_size"
-        android:visibility="gone"/>
+        android:visibility="gone"/>-->
 </RelativeLayout>

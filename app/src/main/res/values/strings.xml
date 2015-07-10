@@ -10,4 +10,6 @@
     <string name="title_activity_health_messeage">HealthMesseageActivity</string>
     <string name="title_activity_health_category_detail">HealthCategoryDetailActivity</string>
     <string name="title_activity_health_msg_item_detail">HealthMsgItemDetailActivity</string>
+    <string name="all_loaded">到头了</string>
+
 </resources>
