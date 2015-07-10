@@ -32,6 +32,7 @@ public class HealthMsgItemDetailActivity extends ActionBarActivity{
         mContentTextView = (TextView)this.findViewById(R.id.item_content);
         mTitleTextView = (TextView)this.findViewById(R.id.item_title);
         int id = getIntent().getIntExtra("id",0);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         detailQuery(id);
     }
 
@@ -39,7 +40,7 @@ public class HealthMsgItemDetailActivity extends ActionBarActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_health_msg_item_detail, menu);
+//        getMenuInflater().inflate(R.menu.menu_health_msg_item_detail, menu);
         return true;
     }
 
@@ -53,6 +54,8 @@ public class HealthMsgItemDetailActivity extends ActionBarActivity{
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if(id == android.R.id.home){
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

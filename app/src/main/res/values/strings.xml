@@ -7,9 +7,9 @@
     <string name="sex_m">男</string>
     <string name="sex_f">女</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_health_messeage">HealthMesseageActivity</string>
-    <string name="title_activity_health_category_detail">HealthCategoryDetailActivity</string>
-    <string name="title_activity_health_msg_item_detail">HealthMsgItemDetailActivity</string>
+    <string name="title_activity_health_messeage">健康资讯</string>
+    <string name="title_activity_health_category_detail">资讯列表</string>
+    <string name="title_activity_health_msg_item_detail">资讯详情</string>
     <string name="all_loaded">到头了</string>
 
 </resources>

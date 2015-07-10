@@ -1,5 +1,6 @@
 package com.example.peterzhang.anysearch;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
         setContentView(R.layout.activity_health_messeage);
         mListView = (ListView)this.findViewById(R.id.category_listView);
         mListView.setOnItemClickListener(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -49,7 +51,7 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_health_messeage, menu);
+//        getMenuInflater().inflate(R.menu.menu_health_messeage, menu);
         return true;
     }
 
@@ -60,9 +62,12 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        Log.d("TEST","id="+id+" R.id.homeAsUp="+ActionBar.DISPLAY_HOME_AS_UP);
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if(id == android.R.id.home){
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

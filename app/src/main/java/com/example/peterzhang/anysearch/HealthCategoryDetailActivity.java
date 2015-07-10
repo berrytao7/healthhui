@@ -60,13 +60,14 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
         mAllLoadedText = (TextView)foot.findViewById(R.id.all_loaded_text);
         mLoadProgress = (ProgressBar)foot.findViewById(R.id.loading);
         mListView.addFooterView(foot);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_health_category_detail, menu);
+//        getMenuInflater().inflate(R.menu.menu_health_category_detail, menu);
         return true;
     }
 
@@ -80,6 +81,8 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if(id == android.R.id.home){
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
