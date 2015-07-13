@@ -1,4 +1,4 @@
-package com.example.peterzhang.anysearch;
+package com.example.peterzhang.healthhui.heathmsg;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.peterzhang.healthhui.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -120,7 +121,7 @@ public class HealthMesseageActivity extends ActionBarActivity implements Adapter
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TextView name = (TextView)view.findViewById(android.R.id.text1);
         Intent intent = new Intent();
-        intent.setClass(HealthMesseageActivity.this,HealthCategoryDetailActivity.class);
+        intent.setClass(HealthMesseageActivity.this,HealthMsgCategoryDetailActivity.class);
         intent.putExtra("keyword",name.getText().toString());
         startActivity(intent);
     }

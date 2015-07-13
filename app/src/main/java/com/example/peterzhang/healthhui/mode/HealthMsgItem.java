@@ -1,4 +1,4 @@
-package com.example.peterzhang.anysearch.mode;
+package com.example.peterzhang.healthhui.mode;
 
 import android.os.Parcel;
 import android.os.Parcelable;

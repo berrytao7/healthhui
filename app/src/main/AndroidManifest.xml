@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.peterzhang.anysearch" >
+    package="com.example.peterzhang.healthhui" >
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -18,22 +18,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".IDSearchActivity"
-            android:label="@string/id_search">
 
-            </activity>
-
-        <activity android:name=".HealthMesseageActivity"
+        <activity android:name=".heathmsg.HealthMesseageActivity"
             android:label="@string/title_activity_health_messeage"
             >
         </activity>
 
-        <activity android:name=".HealthCategoryDetailActivity"
+        <activity android:name=".heathmsg.HealthMsgCategoryDetailActivity"
             android:label="@string/title_activity_health_category_detail"
             >
         </activity>
 
-        <activity android:name=".HealthMsgItemDetailActivity"
+        <activity android:name=".heathmsg.HealthMsgItemDetailActivity"
             android:label="@string/title_activity_health_msg_item_detail"
             >
         </activity>

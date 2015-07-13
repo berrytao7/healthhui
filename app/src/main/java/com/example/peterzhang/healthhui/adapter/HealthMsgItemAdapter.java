@@ -1,9 +1,8 @@
-package com.example.peterzhang.anysearch.adapter;
+package com.example.peterzhang.healthhui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.Image;
 import android.text.Html;
 import android.util.LruCache;
 import android.view.LayoutInflater;
@@ -16,9 +15,9 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-import com.example.peterzhang.anysearch.HealthMsgItemDetailActivity;
-import com.example.peterzhang.anysearch.R;
-import com.example.peterzhang.anysearch.mode.HealthMsgItem;
+import com.example.peterzhang.healthhui.heathmsg.HealthMsgItemDetailActivity;
+import com.example.peterzhang.healthhui.R;
+import com.example.peterzhang.healthhui.mode.HealthMsgItem;
 
 import org.json.JSONArray;
 

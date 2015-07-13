@@ -1,4 +1,4 @@
-package com.example.peterzhang.anysearch;
+package com.example.peterzhang.healthhui;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
