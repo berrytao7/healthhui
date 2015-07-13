@@ -42,6 +42,7 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
     private int mCurrentPage = 1;
     private String mKeyword;
     private boolean mUpdate;
+    private ProgressBar mFootLoadProgress;
     private ProgressBar mLoadProgress;
     private TextView mAllLoadedText;
     private LayoutInflater mLayoutInflater;
@@ -57,12 +58,13 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
         mLayoutInflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         RelativeLayout foot = (RelativeLayout)mLayoutInflater.inflate(R.layout.load_item,null);
         mAllLoadedText = (TextView)foot.findViewById(R.id.all_loaded_text);
-        mLoadProgress = (ProgressBar)foot.findViewById(R.id.loading);
+        mFootLoadProgress = (ProgressBar)foot.findViewById(R.id.foot_loading);
+        mLoadProgress = (ProgressBar)this.findViewById(R.id.loading);
         mListView.addFooterView(foot);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //查询健康资讯
         mLoadProgress.setVisibility(View.VISIBLE);
-//        queryHealthMsg(keyword,1);
+        queryHealthMsg(keyword,1);
     }
 
 
@@ -157,7 +159,7 @@ public class HealthCategoryDetailActivity extends ActionBarActivity implements A
 
         if (totalItemCount != 0
                 && firstVisibleItem + visibleItemCount >= totalItemCount) {
-            mLoadProgress.setVisibility(View.VISIBLE);
+            mFootLoadProgress.setVisibility(View.VISIBLE);
             searchNextpage();
             mUpdate = true;
         }
