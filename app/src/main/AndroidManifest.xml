@@ -19,21 +19,10 @@
         </activity>
 
 
-        <activity android:name=".heathmsg.HealthMesseageActivity"
-            android:label="@string/title_activity_health_messeage"
+        <activity android:name=".HealthMsgActivity"
+            android:label="@string/title_activity_health_msg"
             >
         </activity>
-
-        <activity android:name=".heathmsg.HealthMsgCategoryDetailActivity"
-            android:label="@string/title_activity_health_category_detail"
-            >
-        </activity>
-
-        <activity android:name=".heathmsg.HealthMsgItemDetailActivity"
-            android:label="@string/title_activity_health_msg_item_detail"
-            >
-        </activity>
-
 
         <meta-data
             android:name="channel"

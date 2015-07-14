@@ -1,8 +1,10 @@
 package com.example.peterzhang.healthhui.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.text.Html;
 import android.util.LruCache;
 import android.view.LayoutInflater;
@@ -15,7 +17,6 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-import com.example.peterzhang.healthhui.heathmsg.HealthMsgItemDetailActivity;
 import com.example.peterzhang.healthhui.R;
 import com.example.peterzhang.healthhui.mode.HealthMsgItem;
 
@@ -34,13 +35,12 @@ public class HealthMsgItemAdapter extends BaseAdapter {
     private LayoutInflater mLayoutInflater;
     private RequestQueue mQueue;
 
-    public static HealthMsgItemAdapter build(Context context,ArrayList<HealthMsgItem> healthMsgItems){
+    public static HealthMsgItemAdapter build(Activity context,ArrayList<HealthMsgItem> healthMsgItems){
 
         return new HealthMsgItemAdapter(context,healthMsgItems);
     }
 
-    private HealthMsgItemAdapter(Context context,ArrayList<HealthMsgItem> healthMsgItems){
-
+    private HealthMsgItemAdapter(Activity context,ArrayList<HealthMsgItem> healthMsgItems){
         mContext = context;
         msgItemArrayList = healthMsgItems;
         mLayoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -90,7 +90,7 @@ public class HealthMsgItemAdapter extends BaseAdapter {
         ImageLoader imageLoader = new ImageLoader(mQueue,new BitmapCache());
         ImageLoader.ImageListener listener = ImageLoader.getImageListener(thumb,R.mipmap.ic_launcher, R.mipmap.ic_launcher);
         imageLoader.get("http://www.yi18.net/"+healthMsgItem.getImgURL(),listener);
-        convertView.setOnClickListener(new HealthItemOnclickListener(healthMsgItem));
+//        convertView.setOnClickListener(new HealthItemOnclickListener(healthMsgItem));
         return convertView;
     }
 
@@ -132,28 +132,15 @@ public class HealthMsgItemAdapter extends BaseAdapter {
 
     }
 
-    private class HealthItemOnclickListener implements View.OnClickListener{
-        private HealthMsgItem msgItem;
-        public HealthItemOnclickListener(HealthMsgItem item){
-
-            msgItem = item;
-        }
-
-        @Override
-        public void onClick(View v) {
-
-            Intent intent = new Intent();
-            intent.setClass(mContext, HealthMsgItemDetailActivity.class);
-            intent.putExtra("id",msgItem.getId());
-            mContext.startActivity(intent);
-
-        }
-    }
-
     public void addHealthItemFromJsonArray(JSONArray jsonArray){
         ArrayList<HealthMsgItem> arrayList = new ArrayList<HealthMsgItem>();
         arrayList = HealthMsgItem.build(jsonArray);
         msgItemArrayList.addAll(arrayList);
         notifyDataSetChanged();
+    }
+
+    public interface OnHealthMsgItemClickListener {
+        // TODO: Update argument type and name
+        public void OnHealthMsgItemClick(int id);
     }
 }

@@ -9,9 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
-
-import com.example.peterzhang.healthhui.heathmsg.HealthMesseageActivity;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -40,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
               if(position == 0){
                     Intent intent = new Intent();
-                    intent.setClass(MainActivity.this,HealthMesseageActivity.class);
+                    intent.setClass(MainActivity.this,HealthMsgActivity.class);
                     MainActivity.this.startActivity(intent);
                 }
             }
