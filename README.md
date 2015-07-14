@@ -19,3 +19,6 @@ connection.setRequestProperty("apikey","自己注册帐号后对应的apikey字�
 
 #使用的api列表
 1. 健康资讯
+
+#遵从的Android开发规范
+https://github.com/futurice/android-best-practices
