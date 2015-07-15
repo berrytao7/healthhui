@@ -32,6 +32,7 @@ https://github.com/futurice/android-best-practices
   4. [健康一问](http://apistore.baidu.com/apiworks/servicedetail/165.html) (尚未完成)
   5. [健康知识](http://apistore.baidu.com/apiworks/servicedetail/162.html) (尚未完成)
   6. [药品大全](http://apistore.baidu.com/apiworks/servicedetail/152.html) (尚未完成)
+  7. [医院大全](http://apistore.baidu.com/apiworks/servicedetail/145.html) (尚未完成)
  
 ###使用的开发工具
   1. [android studio](http://www.android-studio.org/)
