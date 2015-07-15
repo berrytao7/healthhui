@@ -1,6 +1,12 @@
 # Healthhui-健康汇
 <br>最贴心的健康助手</br>
 
+###产品主要功能
+  1. 健康咨询、健康食谱、医院大全等健康知识相关的信息聚合。
+  2. 用户可以注册，登陆。
+  3. 具有社交分享功能
+  4. 未完待续
+
 ### 遵从的Android开发规范
 https://github.com/futurice/android-best-practices
  1. 使用volley作http请求框架，由于apistore对于api请求的时候需要添加上自己注册帐号对应的appkey信息，所以在volley代码中我进行了改动。具体位置见：com.android.volley.toolbox.HurlStack.java performRequest  方法中修改：
@@ -24,6 +30,7 @@ https://github.com/futurice/android-best-practices
 ###依赖的第三方库和服务
   1. [api store](http://apistore.baidu.com/)
   2. [volley](https://github.com/zhhp1121/Volley)
+  3. [avos](https://leancloud.cn/?)(尚未使用)
   
 ####依赖apistore里面的服务有
   1. [健康咨询](http://apistore.baidu.com/apiworks/servicedetail/151.html)
