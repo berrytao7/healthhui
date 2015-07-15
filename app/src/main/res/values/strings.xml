@@ -5,16 +5,12 @@
     <string name="health_search">健康资讯</string>
     <string name="sex_m">男</string>
     <string name="sex_f">女</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">健康汇</string>
     <string name="title_activity_health_messeage">健康资讯</string>
     <string name="title_activity_health_category_detail">资讯列表</string>
     <string name="title_activity_health_msg_item_detail">资讯详情</string>
     <string name="all_loaded">到头了</string>
-    <string name="title_activity_health_msg">HealthMsgActivity</string>
-
-    <string name="hello_world">Hello world!</string>
-
+    <string name="title_activity_health_msg">健康资讯</string>
 <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
