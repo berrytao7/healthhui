@@ -16,6 +16,26 @@ https://github.com/futurice/android-best-practices/blob/master/translations/Chin
 ###开发方式
 
 ###工程结构
+<br>使用最新的工程结构</br>
+```
+new-structure
+├─ library-foobar
+├─ app
+│  ├─ libs
+│  ├─ src
+│  │  ├─ androidTest
+│  │  │  └─ java
+│  │  │     └─ com/xxxxxx/project
+│  │  └─ main
+│  │     ├─ java
+│  │     │  └─ com/xxxxxx/project
+│  │     ├─ res
+│  │     └─ AndroidManifest.xml
+│  ├─ build.gradle
+│  └─ proguard-rules.pro
+├─ build.gradle
+└─ settings.gradle
+```
 
 ###架构模型
   1. [Altlas](https://github.com/bunnyblue/OpenAtlas)，插件化开发(尚未启用)。
