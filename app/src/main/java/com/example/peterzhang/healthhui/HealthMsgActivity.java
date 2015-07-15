@@ -27,13 +27,16 @@ public class HealthMsgActivity extends ActionBarActivity implements HealthMsgCat
             transaction.replace(R.id.container,fragment);
             transaction.commit();
         }
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(this.getResources().getDrawable(R.color.actionbar_bg));
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_health_msg, menu);
+//        getMenuInflater().inflate(R.menu.menu_health_msg, menu);
         return true;
     }
 
@@ -47,6 +50,8 @@ public class HealthMsgActivity extends ActionBarActivity implements HealthMsgCat
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if(id == android.R.id.home){
+            onBackPressed();
         }
 
         return super.onOptionsItemSelected(item);
