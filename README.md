@@ -7,7 +7,7 @@
 3. gradle assembleWandoujia //构建wandoujia渠道的apk
 4. 具体参考build.gradle文件。针对每一个渠道可以配置不同的变量值，具体参考buildConfigField
 
-###使用的api列
+###使用的api列表
  1. 健康资讯
 
 ###遵从的Android开发规范
