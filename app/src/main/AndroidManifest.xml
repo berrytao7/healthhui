@@ -20,6 +20,7 @@
 
         <activity android:name=".HealthMsgActivity"
             android:label="@string/title_activity_health_msg"
+            android:theme="@style/Actionbars.Activity"
             >
         </activity>
 
